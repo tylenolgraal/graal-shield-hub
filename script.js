@@ -1,9 +1,7 @@
-// 1. Firebase Imports (Using CDN for easy GitHub Pages hosting)
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, query, orderBy } 
     from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-// 2. Your Specific Firebase Configuration
 const firebaseConfig = {
   apiKey: "AIzaSyB2lSF54AkJkFxDqtMz12_DbuEA6ky7IMw",
   authDomain: "graal-shield-hub.firebaseapp.com",
@@ -14,12 +12,10 @@ const firebaseConfig = {
   measurementId: "G-Q9CND5YT58"
 };
 
-// 3. Initialize Firebase & Firestore
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const shieldCol = collection(db, "shields");
 
-// 4. Global Display Function (Fetches from Cloud)
 async function displayShields() {
     const gallery = document.getElementById("shieldGallery");
     if (!gallery) return;
@@ -27,14 +23,14 @@ async function displayShields() {
     gallery.innerHTML = "<p style='font-size:10px; color:#50fa7b;'>SYNCING WITH DATABASE...</p>";
     
     try {
-        const q = query(shieldCol);
+        const q = query(shieldCol, orderBy("timestamp", "desc"));
         const querySnapshot = await getDocs(q);
         
         gallery.innerHTML = "";
         
-        querySnapshot.forEach((document) => {
-            const shield = document.data();
-            const id = document.id;
+        querySnapshot.forEach((docSnap) => { // Renamed from 'document' to fix the crash
+            const shield = docSnap.data();
+            const id = docSnap.id;
 
             const div = document.createElement("div");
             div.className = "shield";
@@ -48,12 +44,11 @@ async function displayShields() {
             gallery.appendChild(div);
         });
     } catch (e) {
-        gallery.innerHTML = "<p>Error loading shields. Check Firebase rules.</p>";
-        console.error(e);
+        gallery.innerHTML = "<p>Error loading shields. Check Firebase rules or Console.</p>";
+        console.error("Firebase Error:", e);
     }
 }
 
-// 5. Global Upload Function (Saves to Cloud)
 window.uploadShield = async function() {
     const creator = document.getElementById("creator").value.trim();
     const code = document.getElementById("code").value.trim();
@@ -86,7 +81,6 @@ window.uploadShield = async function() {
     reader.readAsDataURL(file);
 }
 
-// 6. Secure Delete Function
 window.deleteShield = async function(id, correctKey) {
     const userKey = prompt("SECURITY: Enter Secret Key to delete this asset:");
     if (userKey === correctKey) {
@@ -100,10 +94,19 @@ window.deleteShield = async function(id, correctKey) {
     }
 }
 
-// 7. Clipboard Helper
 window.copyText = (text) => {
-    navigator.clipboard.writeText(text).then(() => alert("CODE COPIED"));
+    navigator.clipboard.writeText(text).then(() => {
+        alert("CODE COPIED: " + text);
+    }).catch(err => {
+        // Fallback for older browsers
+        const temp = document.createElement("input");
+        document.body.appendChild(temp);
+        temp.value = text;
+        temp.select();
+        document.execCommand("copy");
+        document.body.removeChild(temp);
+        alert("CODE COPIED: " + text);
+    });
 }
 
-// Initialize
 displayShields();
