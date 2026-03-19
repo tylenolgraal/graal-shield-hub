@@ -1,0 +1,110 @@
+body{
+margin:0;
+background:#0b0b0b;
+color:white;
+font-family:'Press Start 2P',cursive;
+}
+
+header{
+text-align:center;
+padding:25px;
+border-bottom:1px solid #222;
+background:#111;
+}
+
+h1{
+font-size:18px;
+}
+
+nav a{
+margin:0 15px;
+text-decoration:none;
+color:#8be9fd;
+font-size:10px;
+}
+
+nav a:hover{
+color:#fff;
+}
+
+.hero{
+text-align:center;
+padding:40px 20px;
+}
+
+.hero h2{
+font-size:14px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:10px;
+color:#aaa;
+}
+
+main{
+max-width:1100px;
+margin:auto;
+padding:20px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fill,200px);
+gap:20px;
+justify-content:center;
+}
+
+.shield{
+background:#151515;
+padding:12px;
+border-radius:12px;
+border:1px solid #2a2a2a;
+transition:0.2s;
+}
+
+.shield:hover{
+transform:scale(1.05);
+box-shadow:0 0 20px rgba(0,255,150,0.2);
+}
+
+.shield img{
+width:100%;
+image-rendering:pixelated;
+border-radius:6px;
+}
+
+.shield h4{
+font-size:10px;
+margin:10px 0 5px;
+
+word-break:break-all;
+line-height:1.4;
+} 
+
+.shield p{
+font-size:8px;
+color:#888;
+}
+
+button{
+width:100%;
+margin-top:8px;
+padding:8px;
+background:#50fa7b;
+border:none;
+border-radius:6px;
+cursor:pointer;
+font-size:9px;
+}
+
+button:hover{
+background:#3be066;
+}
+
+footer{
+text-align:center;
+padding:20px;
+font-size:8px;
+color:#666;
+}
