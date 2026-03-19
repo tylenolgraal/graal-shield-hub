@@ -1,47 +1,46 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
-<title>Upload Shield</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-
+    <title>Upload Shield</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
 <header>
-
-<h1>Upload Shield</h1>
-
-<nav>
-<a href="index.html">Browse</a>
-</nav>
-
+    <h1>Upload Shield</h1>
+    <nav>
+        <a href="index.html">Browse</a>
+    </nav>
 </header>
 
 <main class="upload">
+    <div class="upload-form-container">
+        <div class="input-group">
+            <label>Creator Name</label>
+            <input id="creator" placeholder="your name">
+        </div>
 
-<label>Creator Name</label>
-<input id="creator" placeholder="your name">
+        <div class="input-group">
+            <label>Shield Code / Filename</label>
+            <input id="code" placeholder="ex: tylenol_sniper_shield.gif">
+        </div>
 
-<label>Shield Code / Filename</label>
-<input id="code" placeholder="ex: tylenol_sniper_shield.gif">
+        <div class="input-group">
+            <label>Upload Image</label>
+            <input type="file" id="image" accept="image/*">
+        </div>
 
-<label>Upload Image</label>
-<input type="file" id="image">
+        <div class="input-group">
+            <label>Secret Key (to delete later)</label>
+            <input type="password" id="secretKey" placeholder="Choose a password">
+        </div>
 
-<label>Secret Key (to delete later)</label>
-<input type="password" id="secretKey" placeholder="Choose a password">
-
-<button onclick="uploadShield()">Upload Shield</button>
-
+        <button onclick="uploadShield()">Upload Shield</button>
+    </div>
 </main>
 
-<script src="script.js"></script>
+<script type="module" src="script.js"></script>
 
 </body>
 </html>
