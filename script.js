@@ -27,7 +27,7 @@ async function displayShields() {
     gallery.innerHTML = "<p style='font-size:10px; color:#50fa7b;'>SYNCING WITH DATABASE...</p>";
     
     try {
-        const q = query(shieldCol, orderBy("timestamp", "desc"));
+        const q = query(shieldCol);
         const querySnapshot = await getDocs(q);
         
         gallery.innerHTML = "";
