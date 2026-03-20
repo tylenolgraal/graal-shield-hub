@@ -7,9 +7,9 @@ font-family:'Press Start 2P',cursive;
 background: linear-gradient(
   -45deg,
   #000000,
-  #002200,
-  #00ff88,
-  #002200,
+  #001a00,
+  #00cc66,
+  #001a00,
   #000000
 );
 background-size: 800% 800%;
@@ -87,9 +87,9 @@ transition:0.25s;
 backdrop-filter: blur(6px);
 }
 
-.shield:hover{
-transform:scale(1.05);
-box-shadow:0 0 30px rgba(0,255,150,0.6);
+.shield:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 35px rgba(0,255,150,0.7);
 }
 
 .shield img{
@@ -132,4 +132,21 @@ text-align:center;
 padding:20px;
 font-size:8px;
 color:#888;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0,255,136,0.15), transparent 60%);
+  animation: glowMove 20s linear infinite;
+  z-index: -1;
+}
+
+@keyframes glowMove {
+  0% { transform: translate(0,0); }
+  50% { transform: translate(10%,10%); }
+  100% { transform: translate(0,0); }
 }
