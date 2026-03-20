@@ -18,6 +18,10 @@ background-size: 800% 800%;
 animation: gradientMove 18s ease infinite;
 }
 
+html {
+  height: 100%;
+}
+
 /* Stronger motion */
 @keyframes gradientMove {
   0% { background-position: 0% 50%; }
