@@ -3,13 +3,15 @@ margin:0;
 color:white;
 font-family:'Press Start 2P',cursive;
 
-/* MUCH more visible animated background */
+min-height: 100vh; /* 👈 ADD THIS */
+
+/* your gradient */
 background: linear-gradient(
   -45deg,
   #000000,
-  #001a00,
-  #00cc66,
-  #001a00,
+  #002200,
+  #00ff88,
+  #002200,
   #000000
 );
 background-size: 800% 800%;
