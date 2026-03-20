@@ -3,36 +3,36 @@ margin:0;
 color:white;
 font-family:'Press Start 2P',cursive;
 
-/* Animated black + green gradient background */
+/* Strong animated black + green gradient */
 background: linear-gradient(
   -45deg,
   #000000,
   #001a00,
+  #00ff88,
   #003300,
   #000000
 );
-background-size: 400% 400%;
-animation: gradientMove 12s ease infinite;
+background-size: 600% 600%;
+animation: gradientMove 25s ease infinite;
 }
 
-/* Background animation */
+/* Smoother, more noticeable movement */
 @keyframes gradientMove {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  25% { background-position: 50% 100%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 0%; }
+  100% { background-position: 0% 50%; }
 }
 
 header{
 text-align:center;
 padding:25px;
 border-bottom:1px solid #222;
-background:#111;
+
+/* Let background show through */
+background: rgba(0,0,0,0.5);
+backdrop-filter: blur(8px);
 }
 
 h1{
@@ -79,17 +79,17 @@ justify-content:center;
 }
 
 .shield{
-background: rgba(20, 20, 20, 0.75);
+background: rgba(20,20,20,0.5);
 padding:12px;
 border-radius:12px;
-border:1px solid rgba(0,255,150,0.15);
+border:1px solid rgba(0,255,150,0.2);
 transition:0.25s;
-backdrop-filter: blur(6px);
+backdrop-filter: blur(8px);
 }
 
 .shield:hover{
 transform:scale(1.05);
-box-shadow:0 0 25px rgba(0,255,150,0.35);
+box-shadow:0 0 25px rgba(0,255,150,0.4);
 }
 
 .shield img{
@@ -119,12 +119,12 @@ border:none;
 border-radius:6px;
 cursor:pointer;
 font-size:9px;
-box-shadow:0 0 10px rgba(80,250,123,0.3);
+box-shadow:0 0 10px rgba(80,250,123,0.4);
 }
 
 button:hover{
 background:#3be066;
-box-shadow:0 0 15px rgba(80,250,123,0.6);
+box-shadow:0 0 18px rgba(80,250,123,0.7);
 }
 
 footer{
