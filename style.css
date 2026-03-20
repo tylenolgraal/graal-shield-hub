@@ -3,20 +3,20 @@ margin:0;
 color:white;
 font-family:'Press Start 2P',cursive;
 
-/* Strong animated black + green gradient */
+/* MUCH more visible animated background */
 background: linear-gradient(
   -45deg,
   #000000,
-  #001a00,
+  #002200,
   #00ff88,
-  #003300,
+  #002200,
   #000000
 );
-background-size: 600% 600%;
-animation: gradientMove 25s ease infinite;
+background-size: 800% 800%;
+animation: gradientMove 18s ease infinite;
 }
 
-/* Smoother, more noticeable movement */
+/* Stronger motion */
 @keyframes gradientMove {
   0% { background-position: 0% 50%; }
   25% { background-position: 50% 100%; }
@@ -30,9 +30,9 @@ text-align:center;
 padding:25px;
 border-bottom:1px solid #222;
 
-/* Let background show through */
-background: rgba(0,0,0,0.5);
-backdrop-filter: blur(8px);
+/* More transparent so background shows */
+background: rgba(0,0,0,0.4);
+backdrop-filter: blur(6px);
 }
 
 h1{
@@ -79,17 +79,17 @@ justify-content:center;
 }
 
 .shield{
-background: rgba(20,20,20,0.5);
+background: rgba(20,20,20,0.4);
 padding:12px;
 border-radius:12px;
-border:1px solid rgba(0,255,150,0.2);
+border:1px solid rgba(0,255,150,0.25);
 transition:0.25s;
-backdrop-filter: blur(8px);
+backdrop-filter: blur(6px);
 }
 
 .shield:hover{
 transform:scale(1.05);
-box-shadow:0 0 25px rgba(0,255,150,0.4);
+box-shadow:0 0 30px rgba(0,255,150,0.6);
 }
 
 .shield img{
@@ -107,29 +107,29 @@ line-height:1.4;
 
 .shield p{
 font-size:8px;
-color:#888;
+color:#aaa;
 }
 
 button{
 width:100%;
 margin-top:8px;
 padding:8px;
-background:#50fa7b;
+background:#00ff88;
 border:none;
 border-radius:6px;
 cursor:pointer;
 font-size:9px;
-box-shadow:0 0 10px rgba(80,250,123,0.4);
+box-shadow:0 0 12px rgba(0,255,136,0.6);
 }
 
 button:hover{
-background:#3be066;
-box-shadow:0 0 18px rgba(80,250,123,0.7);
+background:#00cc6a;
+box-shadow:0 0 20px rgba(0,255,136,1);
 }
 
 footer{
 text-align:center;
 padding:20px;
 font-size:8px;
-color:#666;
+color:#888;
 }
