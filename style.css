@@ -103,26 +103,31 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.shield:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(0,255,150,0.4);
+    /* Ensure all cards are the same height */
+    height: 320px; 
+    justify-content: space-between; 
 }
 
 .shield img {
-    width: 100%;
+    /* Fixed size for the image area */
+    width: 128px;
+    height: 128px;
+    /* This prevents stretching while keeping the pixel art sharp */
+    object-fit: contain; 
     image-rendering: pixelated;
     border-radius: 6px;
+    margin-bottom: 10px;
 }
 
 .shield h4 {
     font-size: 10px;
-    margin: 10px 0 5px;
+    margin: 5px 0;
     word-break: break-all; 
     line-height: 1.4;
     text-align: center;
-    width: 100%;
+    /* Limit height so long filenames don't break the layout */
+    max-height: 30px;
+    overflow: hidden;
 }
 
 .shield p {
