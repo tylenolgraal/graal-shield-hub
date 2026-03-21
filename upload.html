@@ -1,32 +1,47 @@
-<main>
-    <section class="hero">
-        <h2>Connect & Create</h2>
-        <p>Resources for the Graal Online Classic community</p>
-    </section>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Shield</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="octo.png">
+</head>
+<body>
 
-    <div class="grid">
-        <div class="shield">
-            <h4>GRAALIANS.COM</h4>
-            <p>The legendary community forums and archives.</p>
-            <button onclick="window.open('https://www.graalians.com', '_blank')">VISIT SITE</button>
+<header>
+    <h1>Upload Shield</h1>
+    <nav>
+        <a href="index.html">Browse</a>
+    </nav>
+</header>
+
+<main class="upload">
+    <div class="upload-form-container">
+        <div class="input-group">
+            <label>Creator Name</label>
+            <input id="creator" placeholder="your name">
         </div>
 
-        <div class="shield">
-            <h4>CLASSIC DISCORD</h4>
-            <p>Chat with other players and show off designs.</p>
-            <button onclick="window.open('https://discord.gg/graalians', '_blank')">JOIN SERVER</button>
+        <div class="input-group">
+            <label>Shield Code / Filename</label>
+            <input id="code" placeholder="ex: tylenol_sniper_shield.gif">
         </div>
 
-        <div class="shield">
-            <h4>SPRITE SHEET MAKER</h4>
-            <p>Essential for organizing your custom frames.</p>
-            <button onclick="window.open('https://www.finalparsec.com/tools/sprite_sheet_maker', '_blank')">OPEN TOOL</button>
+        <div class="input-group">
+            <label>Upload Image</label>
+            <input type="file" id="image" accept="image/*">
         </div>
 
-        <div class="shield">
-            <h4>UPLOAD PAGE</h4>
-            <p>The official portal to submit your customs.</p>
-            <button onclick="window.open('https://www.graalonline.com/playerworlds/downloads/', '_blank')">GO TO UPLOAD</button>
+        <div class="input-group">
+            <label>Secret Key (to delete later)</label>
+            <input type="password" id="secretKey" placeholder="Choose a password">
         </div>
+
+        <button onclick="uploadShield()">Upload Shield</button>
     </div>
 </main>
+
+<script type="module" src="script.js"></script>
+
+</body>
+</html>
