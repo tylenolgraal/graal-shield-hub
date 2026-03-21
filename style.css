@@ -161,3 +161,12 @@ button {
     font-size: 9px;
     color: #000;
     transition: 0
+footer {
+    text-align: center;
+    padding: 60px 20px; /* Increased padding for a cleaner look */
+    font-size: 10px;    /* Slightly larger to match your other text */
+    color: #50fa7b;     /* Changed to your bright green to match the cards */
+    width: 100%;        /* Forces the footer to span the whole screen */
+    display: block;     /* Ensures it respects the centering */
+    clear: both;        /* Prevents anything from the main section from pushing it */
+}
