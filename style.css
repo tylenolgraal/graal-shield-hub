@@ -50,8 +50,10 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fill, 200px);
     gap: 20px;
-    justify-content: center; /* This centers the items horizontally */
-    margin: 0 auto;         /* This centers the container itself */
+    justify-content: center; /* This centers the cards */
+    max-width: 1100px;
+    margin: 0 auto;         /* This centers the container on the page */
+    padding: 20px;
 }
 
 .shield {
